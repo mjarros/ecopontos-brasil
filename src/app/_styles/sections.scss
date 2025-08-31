@@ -1,0 +1,88 @@
+@import "./colors.scss";
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  padding: 6rem 2rem;
+
+  h2 {
+    font-size: 2.5rem;
+    color: $text-light;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: $text-gray;
+  }
+
+  &__message {
+    p {
+      margin: 0;
+    }
+
+    margin-bottom: 1.5rem;
+  }
+
+  .click-search {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    width: 100%;
+
+    gap: 1.5rem;
+
+    position: relative;
+
+    a {
+      border-radius: 1rem;
+      border: 0.063rem solid rgba(255, 255, 255, 0.1);
+      width: fit-content;
+
+      padding: 1rem 1rem;
+      text-decoration: none;
+      span {
+        color: $green-accent;
+        cursor: pointer;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+.section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+
+  h2 {
+    font-size: 2rem;
+    color: $green-accent;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero {
+    .click-search {
+      a {
+        overflow: hidden;
+        width: 100%;
+      }
+    }
+  }
+}

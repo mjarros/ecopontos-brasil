@@ -1,0 +1,10 @@
+@import "../../_styles/colors.scss";
+
+.footer {
+  min-width: 100%;
+  background: rgba(15, 32, 39, 0.95);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  color: $text-gray;
+}

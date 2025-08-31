@@ -1,0 +1,30 @@
+.contact {
+  h2,
+  p,
+  a {
+    text-align: center;
+  }
+
+  > div {
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    .linkedin-button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 7px;
+      text-align: center;
+      outline: none;
+      text-decoration: none !important;
+      color: #ffffff !important;
+      width: 200px;
+      height: 2rem;
+      border-radius: 1rem;
+      background: rgba(15, 32, 39, 0.95);
+      font-family: "SF Pro Text", Helvetica, sans-serif;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import "./_styles/colors.scss";
+
+body {
+  min-height: 100vh;
+  max-height: fit-content;
+  min-width: 100%;
+  margin: 0;
+  font-family: var(--font-inter), var(--font-roboto-mono);
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background-repeat: no-repeat;
+  color: $text-light;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}

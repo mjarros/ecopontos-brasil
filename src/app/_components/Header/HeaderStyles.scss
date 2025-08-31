@@ -1,0 +1,56 @@
+@import "../../_styles/colors.scss";
+
+.header {
+  min-width: 100%;
+  background: rgba(15, 32, 39, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  .container {
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $green-accent;
+    text-align: center;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .nav a,
+  .link {
+    text-decoration: none;
+    color: $text-gray;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $green-accent;
+    }
+  }
+
+  .active-link {
+    color: $green-accent;
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
