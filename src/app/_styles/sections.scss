@@ -31,6 +31,13 @@
     }
   }
 
+  &__sofa-street {
+    max-height: 22.5rem;
+    max-width: 22.5rem;
+
+    margin-bottom: 1.5rem;
+  }
+
   .click-search {
     display: flex;
     flex-direction: column;
@@ -87,9 +94,27 @@
   }
 }
 
+.not-found {
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: $text-gray;
+
+    margin-top: 2rem;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}
+
 @media (max-width: 500px) {
   .hero {
-    padding: 3rem 2rem;
+    h2 {
+      font-size: 2rem;
+    }
+    padding: 2rem 2rem;
     .click-search {
       &__links-container {
         a {
@@ -97,5 +122,9 @@
         }
       }
     }
+  }
+
+  .section {
+    padding: 2rem 2rem;
   }
 }

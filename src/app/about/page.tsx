@@ -8,8 +8,8 @@ import { FC, ReactElement } from "react";
 import "./styles.scss";
 
 export const metadata: Metadata = {
-  title: "Sobre o Recicla Brasil",
-  description: "Informações sobre o Recicla Brasil e o projeto.",
+  title: "Sobre o Ecopontos Brasil",
+  description: "Informações sobre o Ecopontos Brasil e o projeto.",
 };
 
 export default async function AboutPage() {
@@ -30,7 +30,7 @@ export default async function AboutPage() {
     },
     {
       name: "Supabase",
-      description: "Dados gerados pelo 🤖 são armazenados no Supabase, que é uma alternativa open-source ao Firebase, com banco de dados PostgreSQL e APIs automáticas.",
+      description: "Dados gerados pelo 🤖 são armazenados no Supabase, que conta com banco de dados PostgreSQL e APIs automáticas.",
       image: <Image src={supabaseImage} alt="Supabase Image" height={96} width={96} />,
     },
     {
@@ -42,15 +42,22 @@ export default async function AboutPage() {
 
   return (
     <section className="section about">
-      <h2>Sobre o Recicla Brasil</h2>
+      <h2>Sobre o Ecopontos Brasil 🇧🇷 📖 🌎</h2>
       <p>
-        O <strong>Recicla Brasil</strong> é um projeto sem fins lucrativos que nasceu com a missão de facilitar o acesso da população aos locais de descarte correto de resíduos recicláveis.
+        O <strong>Ecopontos Brasil</strong> é um projeto despretencioso e sem fins lucrativos que nasceu com a missão de facilitar o acesso da população aos locais de descarte correto de resíduos recicláveis.
       </p>
-      <p>Acreditamos que pequenas atitudes, como encontrar o ponto de coleta mais próximo, podem gerar grandes impactos ambientais e sociais.</p>
+      <p>Pequenas atitudes, como encontrar o ponto de coleta mais próximo, podem gerar grandes impactos ambientais e sociais.</p>
 
-      <p>Nossa motivação é contribuir para cidades mais limpas e sustentáveis, oferecendo uma plataforma simples e acessível para todos.</p>
+      <p>A principal motivação é contribuir para cidades mais limpas e sustentáveis, oferecendo uma plataforma simples e acessível para todos.</p>
+
+      <h2>Curiosidades 🧐💡</h2>
+
+      <p>Os ecopontos são sustentados pela Política Nacional de Resíduos Sólidos (PNRS), Lei nº 12.305/2010, que estabelece diretrizes para o manejo adequado dos resíduos sólidos no Brasil, incluindo a infraestrutura para coleta e destinação final.</p>
+
+      <p>Além da lei federal, a criação e regulamentação dos ecopontos também é amparada por leis municipais, que detalham o funcionamento e os tipos de materiais recebidos em cada local.</p>
 
       <h2>Tecnologias utilizadas 💻 👇🏻</h2>
+
       <ul className="about__technologies">
         {technologiesList.map((item, key) => (
           <li key={key}>

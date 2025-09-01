@@ -2,6 +2,7 @@ import { supabase } from "@/lib/supabase";
 import { Metadata } from "next";
 import { ReactNode } from "react";
 import SelectEcopontos from "../_components/SelectEcopontos/SelectEcopontos";
+import "./styles.scss";
 
 type EcopontosPageProps = {
   children: ReactNode;
@@ -22,9 +23,11 @@ export default async function EcopontosLayout({ children }: EcopontosPageProps) 
   }
 
   return (
-    <section>
-      <h1 className="text-3xl font-bold mb-6">Selecione a Cidade</h1>
-      <SelectEcopontos cities={cities} />
+    <section className="section ecopontos">
+      <div className="ecopontos__select">
+        <h1>Primeiro, selecione a cidade</h1>
+        <SelectEcopontos cities={cities} />
+      </div>
       {children}
     </section>
   );

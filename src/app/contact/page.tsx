@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import "./styles.scss";
 
 export const metadata: Metadata = {
-  title: "Contato do Recicla Brasil",
-  description: "Informações de contato do Recicla Brasil.",
+  title: "Contato do Ecopontos Brasil",
+  description: "Informações de contato do Ecopontos Brasil.",
 };
 
 export default async function ContactPage() {

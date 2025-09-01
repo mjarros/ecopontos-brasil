@@ -1,4 +1,5 @@
 import { supabase } from "@/lib/supabase";
+import { FC } from "react";
 
 export default async function CitiesPage({ params }: { params: { city: string } }) {
   const decodifiedCity = decodeURIComponent(params.city);
@@ -9,22 +10,37 @@ export default async function CitiesPage({ params }: { params: { city: string } 
   }
 
   return (
-    <main className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Ecopontos e reciclagens em {decodeURIComponent(params.city)}</h1>
+    <div className="list-container">
+      <h1 className="">Ecopontos e reciclagens em {decodeURIComponent(params.city)} 👇🏻</h1>
       {ecopontos && ecopontos.length > 0 ? (
-        <ul className="space-y-4">
-          {ecopontos.map((ecoponto) => (
-            <li key={ecoponto.id} className="border p-4 rounded shadow">
-              <h2 className="font-semibold text-lg">{ecoponto.nome}</h2>
-              <p>{ecoponto.endereco}</p>
-              {ecoponto.telefone && <p>📞 {ecoponto.telefone}</p>}
-              {ecoponto.horario && <p>🕒 {ecoponto.horario}</p>}
+        <ul className="">
+          {ecopontos.map((ecoponto, key) => (
+            <li key={ecoponto.id} className="">
+              <Card key={key} address={ecoponto.endereco} name={ecoponto.nome} openAt={ecoponto.horario} telephone={ecoponto.telefone} />
             </li>
           ))}
         </ul>
       ) : (
         <p>Nenhum ecoponto encontrado nesta cidade.</p>
       )}
-    </main>
+    </div>
   );
 }
+
+type EcopontoCardProps = {
+  name: string;
+  address: string;
+  openAt: string;
+  telephone: string;
+};
+
+const Card: FC<EcopontoCardProps> = ({ name, address, openAt, telephone }) => {
+  return (
+    <div className="ecoponto-card">
+      <h3>{name}</h3>
+      <p>{address}</p>
+      <p>{telephone && <p>📞 {telephone}</p>}</p>
+      <p>{openAt && <p>🕒 {openAt}</p>}</p>
+    </div>
+  );
+};

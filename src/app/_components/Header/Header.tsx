@@ -26,7 +26,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="container">
-        <h1 className="logo">Recicla Brasil</h1>
+        <h1 className="logo">Ecopontos Brasil 🇧🇷</h1>
         <nav className="nav">
           {headerLinks.map((header, key) => (
             <ActiveLink key={key} href={header.path} activeClassName="active-link">
