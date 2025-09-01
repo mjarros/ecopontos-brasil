@@ -2,24 +2,24 @@ import ActiveLink from "../ActiveLink/ActiveLink";
 import "./HeaderStyles.scss";
 
 export default function Header() {
-  const headerTags: Array<{
-    tag: string;
+  const headerLinks: Array<{
+    mensagem: string;
     path: string;
   }> = [
     {
-      tag: "Início",
+      mensagem: "Início",
       path: "/",
     },
     {
-      tag: "Buscar",
+      mensagem: "Buscar",
       path: "/ecopontos",
     },
     {
-      tag: "Sobre",
+      mensagem: "Sobre",
       path: "/about",
     },
     {
-      tag: "Contato",
+      mensagem: "Contato",
       path: "/contact",
     },
   ];
@@ -28,9 +28,9 @@ export default function Header() {
       <div className="container">
         <h1 className="logo">Recicla Brasil</h1>
         <nav className="nav">
-          {headerTags.map((header, key) => (
-            <ActiveLink key={key} href={header.path} activeClassName="active-link" className="link">
-              <span>{header.tag}</span>
+          {headerLinks.map((header, key) => (
+            <ActiveLink key={key} href={header.path} activeClassName="active-link">
+              <span className="link">{header.mensagem}</span>
             </ActiveLink>
           ))}
         </nav>

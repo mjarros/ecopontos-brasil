@@ -22,38 +22,48 @@
 
   &__message {
     p {
-      margin: 0;
+      margin-top: 0.5rem;
     }
-
     margin-bottom: 1.5rem;
+
+    .message__planeta {
+      margin-top: 1rem;
+    }
   }
 
   .click-search {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
 
     width: 100%;
 
     gap: 1.5rem;
 
-    position: relative;
+    &__links-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
 
-    a {
-      border-radius: 1rem;
-      border: 0.063rem solid rgba(255, 255, 255, 0.1);
-      width: fit-content;
+      gap: 1rem;
 
-      padding: 1rem 1rem;
-      text-decoration: none;
-      span {
-        color: $green-accent;
-        cursor: pointer;
-      }
+      a {
+        border-radius: 1rem;
+        border: 0.063rem solid rgba(255, 255, 255, 0.1);
+        width: fit-content;
 
-      &:hover {
-        transform: scale(1.05);
+        padding: 1rem 1rem;
+        text-decoration: none;
+        span {
+          color: $green-accent;
+          cursor: pointer;
+        }
+
+        &:hover {
+          transform: scale(1.02);
+        }
       }
     }
   }
@@ -73,15 +83,18 @@
   p {
     line-height: 1.6;
     margin-bottom: 1rem;
+    color: $text-gray;
   }
 }
 
 @media (max-width: 500px) {
   .hero {
+    padding: 3rem 2rem;
     .click-search {
-      a {
-        overflow: hidden;
-        width: 100%;
+      &__links-container {
+        a {
+          width: 100%;
+        }
       }
     }
   }
