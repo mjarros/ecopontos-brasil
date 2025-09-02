@@ -1,0 +1,51 @@
+@import "../../_styles//colors.scss";
+
+.select-ecopontos {
+  &__select-wrapper {
+    position: relative;
+    display: inline-block;
+    min-width: 10rem;
+
+    &::after {
+      content: "▼";
+      font-size: 0.75rem;
+      color: $green-accent;
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .select-wrapper__custom-select {
+      background-color: #111;
+      color: $green-accent;
+      border-radius: 12px;
+      border: none;
+      padding: 12px 16px;
+      font-size: 16px;
+      width: 100%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      appearance: none; /* remove setas padrão */
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
+      &:hover {
+        box-shadow: 4px 4px 12px #0a0a0a, -4px -4px 12px $green-accent;
+      }
+
+      /* Focus */
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 10px $green-accent, 0 0 20px $green-accent;
+      }
+
+      /* Setinha customizada */
+    }
+
+    .select-wrapper__custom-select option {
+      color: #000;
+    }
+  }
+}

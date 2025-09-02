@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default async function EcopontosLayout({ children }: EcopontosPageProps) {
   const { data: ecopontos, error } = await supabase.from("ecopontos").select("*");
 
-  const cities: Array<string> = Array.from(new Set<string>(ecopontos?.map((ecoponto) => ecoponto.cidade)));
+  const cities: Array<string> = Array.from(new Set<string>(ecopontos?.map((ecoponto) => ecoponto.cidade))).sort((a, b) => a.localeCompare(b));
 
   if (error) {
     return <div>Erro ao carregar ecopontos</div>;
@@ -25,7 +25,7 @@ export default async function EcopontosLayout({ children }: EcopontosPageProps) 
   return (
     <section className="section ecopontos">
       <div className="ecopontos__select">
-        <h1>Primeiro, selecione a cidade</h1>
+        <h1>Primeiro, selecione a cidade... </h1>
         <SelectEcopontos cities={cities} />
       </div>
       {children}
