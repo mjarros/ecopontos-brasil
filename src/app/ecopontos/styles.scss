@@ -9,7 +9,11 @@
 
     gap: 1rem;
 
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
+
+    h1 {
+      text-align: center;
+    }
   }
 
   ul {
@@ -62,16 +66,32 @@
     align-items: center;
     justify-content: flex-start;
 
-    h2 {
+    h2,
+    h3 {
       color: $text-gray;
+      text-align: center;
     }
 
-    h1 + p {
+    h1 + p,
+    h3 + p {
       margin-top: 1rem;
     }
   }
 
   .list-container__neighborhood {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.25rem;
+
+    margin-bottom: 2rem;
+
+    p {
+      margin: 0;
+    }
+
     .custom-input-wrapper {
       position: relative;
       width: 100%;
@@ -79,7 +99,7 @@
 
     .custom-input {
       background-color: #111;
-      color: #fff;
+      color: $green-accent;
       border-radius: 12px;
       border: none;
       padding: 12px 16px;
@@ -89,15 +109,17 @@
       transition: all 0.3s ease;
     }
 
-    /* Hover */
     .custom-input:hover {
-      box-shadow: 4px 4px 12px #0a0a0a, -4px -4px 12px #1a1a1a;
+      box-shadow: 0 0 10px $green-accent, 0 0 20px $green-accent;
     }
 
-    /* Focus */
     .custom-input:focus {
       outline: none;
-      box-shadow: 0 0 10px #0d6efd, 0 0 20px rgba(13, 110, 253, 0.6);
+      box-shadow: 0 0 10px $green-accent, 0 0 20px $green-accent;
+    }
+
+    .custom-input::placeholder {
+      color: $green-accent;
     }
   }
 }
@@ -107,6 +129,15 @@
     &__select {
       flex-direction: column;
       margin-bottom: 1.5rem;
+    }
+
+    .list-container__neighborhood {
+      flex-direction: column;
+      margin-bottom: 1.5rem;
+
+      p {
+        margin-bottom: 0.5rem;
+      }
     }
   }
 }

@@ -32,7 +32,7 @@
       -moz-appearance: none;
 
       &:hover {
-        box-shadow: 4px 4px 12px #0a0a0a, -4px -4px 12px $green-accent;
+        box-shadow: 0 0 10px $green-accent, 0 0 20px $green-accent;
       }
 
       /* Focus */
