@@ -52,8 +52,8 @@ export default function Home() {
 
         {/* Mensagem */}
         <motion.div className="hero__message" initial="hiddenLeft" animate="show" variants={itemVariants} transition={{ ...transitionSettings, delay: 0.3 }}>
-          <p>Através da API do Googlpe Maps e de geoposicionamento, você encontra os ecopontos das capitais e principais cidades do Brasil.</p>
-          <p>Desta forma, vc contribui para sua cidade, bairro e comunidade ficarem mais limpos.</p>
+          <p>Através da API do Google Maps e de geoposicionamento, você encontra os ecopontos das capitais e principais cidades do Brasil.</p>
+          <p>Desta forma, você contribui para sua cidade, bairro e comunidade ficarem mais limpos.</p>
           <p>O Ecopontos Brasil é para facilitar a sua vida.</p>
         </motion.div>
 
