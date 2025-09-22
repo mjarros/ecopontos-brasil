@@ -9,7 +9,7 @@ type EcopontosPageProps = {
 };
 
 export const metadata: Metadata = {
-  title: "Ecopontos e Reciclagens por Cidade",
+  title: "Busca por cidade - Ecopontos Brasil",
   description: "Lista de ecopontos e reciclagens por cidade, disponibilizada pela API do Google Maps.",
 };
 

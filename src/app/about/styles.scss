@@ -8,6 +8,15 @@
 
   p {
     text-align: justify;
+
+    a {
+      text-decoration: none;
+      text-decoration: underline;
+
+      color: $text-light;
+
+      text-align: center;
+    }
   }
 
   p + h2 {

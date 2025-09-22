@@ -12,7 +12,6 @@ export default function SelectEcopontos({ cities }: SelectEcopontosProps) {
   const router = useRouter();
 
   const handleSearch = (value: string) => {
-    console.log(value);
     if (value.trim().toLocaleLowerCase()) {
       router.push(`/ecopontos/${encodeURIComponent(value)}`);
     }

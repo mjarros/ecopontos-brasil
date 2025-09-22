@@ -1,4 +1,7 @@
+"use client";
+
 import sofa from "@/public/sofa_at_street.jpg";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ReactElement } from "react";
@@ -25,21 +28,42 @@ export default function Home() {
       path: "/about",
     },
   ];
+
+  // Variants para entrada lateral com fade
+  const itemVariants = {
+    hiddenLeft: { opacity: 0, x: -50 },
+    hiddenRight: { opacity: 0, x: 50 },
+    show: { opacity: 1, x: 0 },
+  };
+
+  const transitionSettings = {
+    type: "tween" as const,
+    duration: 0.8,
+    ease: "easeOut" as const,
+  };
+
   return (
     <main>
       <section className="hero">
-        <h2>Encontre o Ecoponto ou centro de reciclagem mais próximo</h2>
-        <div className="hero__message">
+        {/* Título */}
+        <motion.h2 initial="hiddenLeft" animate="show" variants={itemVariants} transition={{ ...transitionSettings, delay: 0.1 }}>
+          Encontre o Ecoponto ou centro de reciclagem mais próximo de você
+        </motion.h2>
+
+        {/* Mensagem */}
+        <motion.div className="hero__message" initial="hiddenLeft" animate="show" variants={itemVariants} transition={{ ...transitionSettings, delay: 0.3 }}>
+          <p>Através da API do Googlpe Maps e de geoposicionamento, você encontra os ecopontos das capitais e principais cidades do Brasil.</p>
+          <p>Desta forma, vc contribui para sua cidade, bairro e comunidade ficarem mais limpos.</p>
           <p>O Ecopontos Brasil é para facilitar a sua vida.</p>
-          <p> Contribua para sua comunidade, bairro e cidade ficarem mais limpos e sustentáveis.</p>
-          <p className="message__planeta">
-            <strong>O planeta te agradece 🌎.</strong>
-          </p>
-        </div>
-        <div className="hero__sofa-street">
+        </motion.div>
+
+        {/* Imagem */}
+        <motion.div className="hero__sofa-street" initial="hiddenRight" animate="show" variants={itemVariants} transition={{ ...transitionSettings, delay: 0.5 }}>
           <Image layout="responsive" src={sofa} alt="Sofá descartado inadequadamente na rua." height={500} width={500} />
-        </div>
-        <div className="click-search">
+        </motion.div>
+
+        {/* Links */}
+        <motion.div className="click-search" initial="hiddenLeft" animate="show" variants={itemVariants} transition={{ ...transitionSettings, delay: 0.7 }}>
           <nav className="click-search__links-container">
             {heroLinks.map((item, key) => (
               <Link key={key} href={item.path}>
@@ -47,7 +71,10 @@ export default function Home() {
               </Link>
             ))}
           </nav>
-        </div>
+          <p className="message__planeta">
+            <strong>🌎 O planeta te agradece. 🌎</strong>
+          </p>
+        </motion.div>
       </section>
     </main>
   );
