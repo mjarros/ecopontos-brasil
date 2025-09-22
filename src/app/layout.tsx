@@ -29,6 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <head>
+        <meta name="google-site-verification" content="jMe4B3UjZdywbjepRqkW4fytr0BgmNnIbDJmf5Nnl4Q" />
+      </head>
       <body className={`${inter.variable} ${robotoMono.variable}`}>
         <Header />
         {children}

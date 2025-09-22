@@ -23,7 +23,7 @@ export default function AboutPage() {
     },
     {
       name: "GitHub Actions",
-      description: "No GitHub, tem um 🤖 que nunca dorme, e todo mês coleta dados das cidades e armazena no Supabase, para que você possa consultar.",
+      description: "No GitHub, tem um 🤖 que nunca dorme, e todo mês coleta dados das cidades e armazena no Supabase, para que você tenha dados sempre atualizados.",
       image: <Image src={gitHubImage} alt="GitHub Image" height={96} width={96} />,
     },
     {
