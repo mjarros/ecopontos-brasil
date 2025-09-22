@@ -1,5 +1,6 @@
 "use client";
 
+import framerMotionImage from "@/public/framer-motion-logo.svg";
 import gitHubImage from "@/public/gitHub.svg";
 import nextImage from "@/public/next.svg";
 import SassImage from "@/public/sass.svg";
@@ -34,6 +35,11 @@ export default function AboutPage() {
       name: "Sass",
       description: "Sass ao invés de Tailwind porque é menos verboso e deixa o JSX mais limpo.",
       image: <Image src={SassImage} alt="Sass Image" height={96} width={96} />,
+    },
+    {
+      name: "Framer Motion",
+      description: "Framer Motion é uma biblioteca de animação de código aberto para React que permite aos desenvolvedores criar animações, transições e efeitos de interação de forma simples e fluida em aplicações web.",
+      image: <Image src={framerMotionImage} alt="Framer Motion Image" height={96} width={96} />,
     },
   ];
 
