@@ -10,6 +10,13 @@ type EcopontosListContainerProps = {
   city: string;
 };
 
+// função utilitária para remover acentos
+const normalizeString = (str: string) =>
+  str
+    .normalize("NFD") // decompõe letras com acento
+    .replace(/[\u0300-\u036f]/g, "") // remove os diacríticos
+    .toLowerCase();
+
 // Variants da lista para stagger
 const listVariants = {
   hidden: {},
@@ -23,7 +30,8 @@ const listVariants = {
 export default function EcopontosListContainer({ ecopontos, city }: EcopontosListContainerProps) {
   const [searchValue, setSearchValue] = useState<string>("");
 
-  const filteredEcopontos = ecopontos?.filter((e) => e.endereco.toLowerCase().includes(searchValue.toLowerCase()));
+  // busca ignorando acentos e case
+  const filteredEcopontos = ecopontos?.filter((e) => normalizeString(e.endereco).includes(normalizeString(searchValue)));
 
   return (
     <div className="list-container">
