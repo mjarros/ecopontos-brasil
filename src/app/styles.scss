@@ -34,3 +34,29 @@ body {
     font-size: 1rem;
   }
 }
+
+.custom-tooltip .tooltip-inner {
+  background-color: #222 !important; /* fundo escuro */
+  color: #fff !important; /* texto branco */
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  max-width: 220px;
+  text-align: center;
+}
+
+/* Arrow — tratar todas as posições (top, bottom, start, end) */
+.custom-tooltip.bs-tooltip-top .tooltip-arrow::before {
+  border-top-color: #222 !important;
+}
+.custom-tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+  border-bottom-color: #222 !important;
+}
+.custom-tooltip.bs-tooltip-start .tooltip-arrow::before {
+  border-left-color: #222 !important;
+}
+.custom-tooltip.bs-tooltip-end .tooltip-arrow::before {
+  border-right-color: #222 !important;
+}

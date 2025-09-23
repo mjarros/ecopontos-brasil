@@ -47,7 +47,7 @@ export default function Home() {
       <section className="hero">
         {/* Título */}
         <motion.h2 initial="hiddenLeft" animate="show" variants={itemVariants} transition={{ ...transitionSettings, delay: 0.1 }}>
-          Encontre o Ecoponto ou centro de reciclagem mais próximo de você
+          Busque e encontre o Ecoponto ou centro de reciclagem mais próximo de você
         </motion.h2>
 
         {/* Mensagem */}

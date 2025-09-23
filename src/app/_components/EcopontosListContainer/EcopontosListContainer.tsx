@@ -3,7 +3,8 @@
 import { Ecoponto } from "@/utils/types";
 import { AnimatePresence, motion } from "framer-motion";
 import { FC, useState } from "react";
-import { Form } from "react-bootstrap";
+import { Form, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { FaMapMarkedAlt, FaWaze } from "react-icons/fa"; // <- pacotão de ícones
 
 type EcopontosListContainerProps = {
   ecopontos: Array<Ecoponto>;
@@ -94,12 +95,56 @@ type EcopontoCardProps = {
 };
 
 const Card: FC<EcopontoCardProps> = ({ name, address, openAt, telephone }) => {
+  const encodedAddress = encodeURIComponent(address);
+
+  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+  const wazeUrl = `https://waze.com/ul?q=${encodedAddress}`;
+
   return (
     <div className="ecoponto-card p-4 border rounded-lg shadow">
       <h3 className="font-semibold">{name}</h3>
       <p>Endereço: {address}</p>
       {telephone && <p>Telefone: {telephone}</p>}
       {/* {openAt && <p>🕒 {openAt}</p>} */}
+
+      {/* Botões redondos estilo mobile */}
+      <div className="ecoponto-card__links">
+        {/* Google Maps */}
+        <OverlayTrigger placement="top" overlay={<Tooltip className="custom-tooltip">Abrir no Google Maps</Tooltip>}>
+          <a
+            href={googleMapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn rounded-circle d-flex align-items-center justify-content-center"
+            style={{
+              backgroundColor: "#4285F4",
+              color: "#FFFFFF",
+              width: "48px",
+              height: "48px",
+            }}
+          >
+            <FaMapMarkedAlt size={20} />
+          </a>
+        </OverlayTrigger>
+
+        {/* Waze */}
+        <OverlayTrigger placement="top" overlay={<Tooltip className="custom-tooltip">Abrir no Waze</Tooltip>}>
+          <a
+            href={wazeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn rounded-circle d-flex align-items-center justify-content-center"
+            style={{
+              backgroundColor: "#05C8F7",
+              color: "#FFFFFF",
+              width: "48px",
+              height: "48px",
+            }}
+          >
+            <FaWaze size={20} />
+          </a>
+        </OverlayTrigger>
+      </div>
     </div>
   );
 };

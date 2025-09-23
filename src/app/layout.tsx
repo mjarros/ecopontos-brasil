@@ -19,7 +19,7 @@ const robotoMono = Roboto_Mono({
 
 export const metadata: Metadata = {
   title: "Ecopontos Brasil",
-  description: "Aqui você encontra facilmente uma listagem de ecopontos e reciclagens por cidade, disponibilizada pela API do Google Maps.",
+  description: "Aqui você realiza sua busca e encontra uma lista sempre atualizada de ecopontos e reciclagens por cidade, disponibilizada pela API do Google Maps.",
 };
 
 export default function RootLayout({
